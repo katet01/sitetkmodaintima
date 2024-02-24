@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tk Moda Íntima | Ecommerce</title>
+    <link rel="stylesheet" href="styles/globais.css" />
+    <link rel="shortcut icon" href="images/icones/tkicone.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<body>
+    <section id="Ínicio"></section>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <a href="index.html" style="text-decoration: none; transition-duration: 0.5s;">
+                <h1 class="logo">TK MODA<span> ÍNTIMA</span></h1>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li style="font-family: sans-serif;">
+                        <a class="nav-link" href="index.html">Ínicio</a>
+                    <li style="font-family: sans-serif;">
+                        <a class="nav-link" href="index.html#Produtos">Produtos</a>
+                    <li style="font-family: sans-serif;">
+                            <a href="index.html#pecas-disponiveis">Disponíveis</a>
+                    </li>
+                    <li style="font-family: sans-serif;">
+                        <!-- Adicione a imagem do WhatsApp junto à frase "Entrar em contato" -->
+                        <a class="nav-link" target="_blank" href="https://contate.me/tkmodaintima">
+                            Contato
+                            <img src="images/whats_navbar.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 5px; margin-left: 1px; width: 20px; height: 20px; margin-top: -4px;">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <img src="images/menu.png" class="menu-button" />
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <section>
+            <div class="container">
+                <div class="left-side">
+                    <div class="items">
+                        <div id="slider" class="images-slider">
+                            <div class="slide-container">
+                                <img src="produtos-main/tamanho G/conjunto-reforcado-roxo-1-tamanho-ajustado.png" alt="Imagem 1" class="slide">
+                            </div>
+                            <button id="prevBtn">&#10094;</button>
+                            <button id="nextBtn">&#10095;</button>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="right-side">
+                    <div class="content">
+                        <h1>CONJUNTO DE RENDA<br>ROXO</h1>
+                                <p>Descubra o luxo discreto com nosso conjunto
+                                    de renda roxo. A tonalidade sofisticada encontra
+                                    a sensualidade da renda, criando uma peça que celebra
+                                    sua feminilidade com elegância. Vista-se com estilo e 
+                                   deixe sua confiança brilhar.
+                                </p>
+                                    <span class="preço">R$ 75,00</span>
+                                     <div class="options">
+                                        <div class="sizes">
+                                            <p>Tamanhos disponíveis:</p>
+                                            <div class="size" onclick="selectSize(this)">G</div>
+                                            <div class="size" onclick="selectSize(this)" style="font-size: 16px;
+                                            padding: 12px 12px; text-align: center;">GG</div>
+                                        </div>
+                                        
+                            </div>
+                                    <a href="#" class="button-cart" id="comprarButton">
+                                    <img src="images/icon-cart.svg">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </section>
+
+
+    </header>
+
+    <!-- Main Content-->
+
+    <main>
+        
+
+        <footer class="gray-background-footer">
+            <div class="page-inner-content footer-content" style="font-family: sans-serif;">
+                <div class="logo-footer">
+                    <h1 class="logo">TK MODA<span> ÍNTIMA</span></h1>
+                    <p>Nosso objetivo é transformar as mulheres que vivem
+                        em um padrão de estilo ínitmos, tornando-as mais<br>elegantes
+                        e empoderadas.
+                    </p>
+                </div>
+                <div class="link-footer">
+                    <h3>Redes Sociais</h3>
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://www.instagram.com/tk_moda_intima_?igsh=MTJ3OG1qOXMzN2tveg==">
+                                <img src="images/Instagram_icon_footer.png" style="width: 22px; height: 22px">
+                                Instagram
+                            </a>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://contate.me/tkmodaintima">
+                                <img src="images/whats_footer.png" style="width: 22px; height: 22px;">
+                                WhatsApp
+                            </a>
+                    </ul>
+                </div>
+            </div>
+            <hr class="page-inner-content" />
+            <div class="page-inner-content copyright">
+                <p>© Copyright 2024 Tk Moda Íntima - Todos os direitos reservados</p>
+            </div>
+        </footer>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector(".navbar");
+            const menuButton = document.querySelector(".menu-button");
+
+            menuButton.addEventListener('click', () => {
+                navbar.classList.toggle('show-menu');
+            });
+
+            // Event listener para fechar a navbar quando clicar fora dela
+            document.addEventListener('click', function(event) {
+                const isClickInsideNavbar = navbar.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+
+                if (!isClickInsideNavbar && !isClickOnMenuButton) {
+                    navbar.classList.remove('show-menu');
+                }
+            });
+
+            // Event listeners para fechar a navbar quando clicar em algum item dela
+            const navLinks = navbar.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('show-menu');
+                    // Adicionando uma pequena pausa para a transição CSS
+                    setTimeout(() => {
+                        navbar.classList.remove('in');
+                    }, 300); // Tempo igual ao tempo de transição CSS
+                });
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        // Seletor para o botão "Ver Agora"
+        const verAgoraButton = document.getElementById('ver-agora-button');
+
+        // Seletor para a seção de produtos
+        const produtosSection = document.getElementById('Produtos');
+
+        // Adicionando evento de clique ao botão "Ver Agora"
+        verAgoraButton.addEventListener('click', function() {
+            // Role a página até a seção de produtos
+            produtosSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+
+    function changeImage(thumbnail) {
+        var mainImage = document.getElementById('mainImage');
+        var mainSrc = mainImage.src;
+        mainImage.style.transform = "scale(0.9)"; // Adiciona um efeito de escala na imagem principal
+        setTimeout(function() {
+            mainImage.src = thumbnail.src;
+            thumbnail.src = mainSrc;
+            mainImage.style.transform = "scale(1)"; // Retorna a escala da imagem principal ao normal
+        }, 200); // Tempo correspondente à transição definida no CSS (0.3s = 300ms)
+    }
+
+    function moveToThumbnail(mainImage) {
+        var thumbnailContainer = document.getElementById('thumbnailContainer');
+        var mainImageSrc = mainImage.src;
+
+        var thumbnails = thumbnailContainer.querySelectorAll('.thumbnail img');
+        for (var i = 0; i < thumbnails.length; i++) {
+            var thumbnailSrc = thumbnails[i].src;
+            if (thumbnailSrc === mainImageSrc) {
+                thumbnails[i].src = mainImage.src;
+                mainImage.src = mainImageSrc;
+                break;
+            }
+        }
+    }
+
+        // FUNÇÃO PARA SELECIONAR E TIRAR A SELEÇÃO DO TAMANHO
+
+    function selectSize(element) {
+            // Verificar se o tamanho está selecionado
+            var isSelected = element.classList.contains('selected');
+
+            // Remover a classe 'selected' de todos os tamanhos
+            var sizes = document.querySelectorAll('.size');
+            sizes.forEach(function(sizeElement) {
+                sizeElement.classList.remove('selected');
+            });
+
+            // Se o tamanho não estiver selecionado, adiciona a classe 'selected'
+            // Caso contrário, apenas remova a seleção
+            if (!isSelected) {
+                element.classList.add('selected');
+            }
+        }
+
+        document.getElementById('comprarButton').addEventListener('click', function() {
+            var linkDaPeca = window.location.href;
+            var tamanhoSelecionado = document.querySelector('.size.selected').innerText;
+
+            var mensagem = encodeURIComponent("Olá, gostaria de adquirir essa peça => " + linkDaPeca + ", no tamanho => " + tamanhoSelecionado + ". Tem disponível?");
+            var whatsappURL = "https://api.whatsapp.com/send?phone=18998014386&text=" + mensagem;
+
+            // Abre a aba do WhatsApp
+            window.open(whatsappURL, '_blank');
+
+            // Remove a seleção de tamanho
+            var sizes = document.querySelectorAll('.size');
+            sizes.forEach(function(sizeElement) {
+                sizeElement.classList.remove('selected');
+            });
+        });
+
+        // FUNÇÃO PARA SELECIONAR E TIRAR A SELEÇÃO DO TAMANHO - FINAL
+
+document.getElementById('comprarButton').addEventListener('click', function() {
+    var linkDaPeca = window.location.href;
+    var tamanhoSelecionado = document.querySelector('.size.selected').innerText;
+
+    var mensagem = encodeURIComponent("Olá, gostaria de adquirir essa peça => " + linkDaPeca + ", no tamanho => " + tamanhoSelecionado + ". Tem disponível?");
+    var whatsappURL = "https://api.whatsapp.com/send?phone=18998014386&text=" + mensagem;
+
+    window.open(whatsappURL, '_blank');
+});
+
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  slideIndex++;
+  
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  
+  slides[slideIndex - 1].style.display = "block";    
+}
+
+function showSlidesPrev() {
+  let slides = document.getElementsByClassName("slide");
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  slideIndex--;
+  
+  if (slideIndex < 1) {slideIndex = slides.length}    
+  
+  slides[slideIndex - 1].style.display = "block";  
+}
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  showSlidesPrev();
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  showSlides();
+});
+
+
+/* testando o zoom */
+document.querySelectorAll('.slide').forEach(item => {
+        item.addEventListener('click', function(event) {
+            // Coordenadas do clique
+            const x = event.offsetX / this.offsetWidth * 100;
+            const y = event.offsetY / this.offsetHeight * 100;
+
+            // Zoom na imagem
+            if (this.classList.contains('zoomed')) {
+                this.style.transform = 'scale(1)';
+                this.classList.remove('zoomed');
+            } else {
+                this.style.transformOrigin = `${x}% ${y}%`;
+                this.style.transform = 'scale(2)';
+                this.classList.add('zoomed');
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
